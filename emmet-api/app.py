@@ -21,42 +21,25 @@ if len(db_uri.split("://", 1)) < 2:
 if db_uri:
 
     materials_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="material_id",
-        collection_name="materials",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="material_id", collection_name="materials",
     )
 
     bonds_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="material_id",
-        collection_name="bonds",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="material_id", collection_name="bonds",
     )
 
     formula_autocomplete_store = MongoURIStore(
-        uri=db_uri,
-        database="mp_core",
-        key="_id",
-        collection_name="formula_autocomplete",
+        uri=db_uri, database="mp_core", key="_id", collection_name="formula_autocomplete",
     )
 
-    task_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="task_id", collection_name="tasks",
-    )
+    task_store = MongoURIStore(uri=db_uri, database="mp_core", key="task_id", collection_name="tasks",)
 
     thermo_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="thermo_id",
-        collection_name="thermo",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="thermo_id", collection_name="thermo",
     )
 
     s3_phase_diagram_index = MongoURIStore(
-        uri=db_uri,
-        database="mp_core",
-        key="phase_diagram_id",
-        collection_name="s3_phase_diagram_index",
+        uri=db_uri, database="mp_core", key="phase_diagram_id", collection_name="s3_phase_diagram_index",
     )
 
     phase_diagram_store = S3Store(
@@ -69,139 +52,74 @@ if db_uri:
     )
 
     dielectric_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="material_id",
-        collection_name="dielectric",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="material_id", collection_name="dielectric",
     )
 
     piezoelectric_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="material_id",
-        collection_name="piezoelectric",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="material_id", collection_name="piezoelectric",
     )
 
     magnetism_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="material_id",
-        collection_name="magnetism",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="material_id", collection_name="magnetism",
     )
 
-    phonon_bs_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="material_id", collection_name="pmg_ph_bs",
-    )
+    phonon_bs_store = MongoURIStore(uri=db_uri, database="mp_core", key="material_id", collection_name="pmg_ph_bs",)
 
-    eos_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="task_id", collection_name="eos",
-    )
+    eos_store = MongoURIStore(uri=db_uri, database="mp_core", key="task_id", collection_name="eos",)
 
-    similarity_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="material_id", collection_name="similarity",
-    )
+    similarity_store = MongoURIStore(uri=db_uri, database="mp_core", key="material_id", collection_name="similarity",)
 
-    xas_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="spectrum_id", collection_name="xas",
-    )
+    xas_store = MongoURIStore(uri=db_uri, database="mp_core", key="spectrum_id", collection_name="xas",)
 
-    gb_store = MongoURIStore(
-        uri=db_uri,
-        database="mp_core",
-        key="task_id",
-        collection_name="grain_boundaries",
-    )
+    gb_store = MongoURIStore(uri=db_uri, database="mp_core", key="task_id", collection_name="grain_boundaries",)
 
-    fermi_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="task_id", collection_name="fermi_surface",
-    )
+    fermi_store = MongoURIStore(uri=db_uri, database="mp_core", key="task_id", collection_name="fermi_surface",)
 
-    elasticity_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="task_id", collection_name="elasticity",
-    )
+    elasticity_store = MongoURIStore(uri=db_uri, database="mp_core", key="task_id", collection_name="elasticity",)
 
-    doi_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="task_id", collection_name="dois",
-    )
+    doi_store = MongoURIStore(uri=db_uri, database="mp_core", key="task_id", collection_name="dois",)
 
-    substrates_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="film_id", collection_name="substrates",
-    )
+    substrates_store = MongoURIStore(uri=db_uri, database="mp_core", key="film_id", collection_name="substrates",)
 
     surface_props_store = MongoURIStore(
-        uri=db_uri,
-        database="mp_core",
-        key="task_id",
-        collection_name="surface_properties",
+        uri=db_uri, database="mp_core", key="task_id", collection_name="surface_properties",
     )
 
     robo_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="material_id",
-        collection_name="robocrys",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="material_id", collection_name="robocrys",
     )
 
-    synth_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="_id", collection_name="synth_descriptions",
-    )
+    synth_store = MongoURIStore(uri=db_uri, database="mp_core", key="_id", collection_name="synth_descriptions",)
 
     insertion_electrodes_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="battery_id",
-        collection_name="insertion_electrodes",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="battery_id", collection_name="insertion_electrodes",
     )
 
-    molecules_store = MongoURIStore(
-        uri=db_uri, database="mp_core", key="task_id", collection_name="molecules",
-    )
+    molecules_store = MongoURIStore(uri=db_uri, database="mp_core", key="task_id", collection_name="molecules",)
 
     oxi_states_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="material_id",
-        collection_name="oxi_states",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="material_id", collection_name="oxi_states",
     )
 
     provenance_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="material_id",
-        collection_name="provenance",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="material_id", collection_name="provenance",
     )
 
     alloy_pairs_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="pair_id",
-        collection_name="alloy_pairs",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="pair_id", collection_name="alloy_pairs",
     )
 
     summary_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="material_id",
-        collection_name="summary",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="material_id", collection_name="summary",
     )
 
     es_store = MongoURIStore(
-        uri=db_uri,
-        database=f"mp_core_{db_suffix}",
-        key="material_id",
-        collection_name="electronic_structure",
+        uri=db_uri, database=f"mp_core_{db_suffix}", key="material_id", collection_name="electronic_structure",
     )
 
-    s3_bs_index = MongoURIStore(
-        uri=db_uri,
-        database="mp_core",
-        key="fs_id",
-        collection_name="s3_bandstructure_index",
-    )
+    s3_bs_index = MongoURIStore(uri=db_uri, database="mp_core", key="fs_id", collection_name="s3_bandstructure_index",)
 
-    s3_dos_index = MongoURIStore(
-        uri=db_uri, database="mp_core", key="fs_id", collection_name="s3_dos_index",
-    )
+    s3_dos_index = MongoURIStore(uri=db_uri, database="mp_core", key="fs_id", collection_name="s3_dos_index",)
 
     s3_bs = S3Store(
         index=s3_bs_index,
@@ -222,10 +140,7 @@ if db_uri:
     )
 
     s3_chgcar_index = MongoURIStore(
-        uri=db_uri,
-        database="mp_core",
-        key="fs_id",
-        collection_name="atomate_chgcar_fs_index",
+        uri=db_uri, database="mp_core", key="fs_id", collection_name="atomate_chgcar_fs_index",
     )
 
     s3_chgcar = S3Store(
@@ -238,56 +153,24 @@ if db_uri:
         searchable_fields=["task_id", "fs_id"],
     )
 
-    chgcar_url = MongoURIStore(
-        uri=db_uri, database="mp_core", key="fs_id", collection_name="chgcar_s3_urls",
-    )
+    chgcar_url = MongoURIStore(uri=db_uri, database="mp_core", key="fs_id", collection_name="chgcar_s3_urls",)
 
     mpcomplete_store = MongoURIStore(
-        uri=db_uri,
-        database="mp_consumers",
-        key="submission_id",
-        collection_name="mpcomplete",
+        uri=db_uri, database="mp_consumers", key="submission_id", collection_name="mpcomplete",
     )
 
     consumer_settings_store = MongoURIStore(
-        uri=db_uri,
-        database="mp_consumers",
-        key="consumer_id",
-        collection_name="settings",
+        uri=db_uri, database="mp_consumers", key="consumer_id", collection_name="settings",
     )
 
     general_store = MongoURIStore(
-        uri=db_uri,
-        database="mp_consumers",
-        key="submission_id",
-        collection_name="general_store",
+        uri=db_uri, database="mp_consumers", key="submission_id", collection_name="general_store",
     )
 else:
     raise RuntimeError("Must specify MongoDB URI containing inputs.")
 
-# Materials
-from emmet.api.routes.materials.resources import (
-    materials_resource,
-    find_structure_resource,
-    formula_autocomplete_resource,
-)
+# -- Tasks -- #
 
-resources.update(
-    {
-        "materials": [
-            find_structure_resource(materials_store),
-            formula_autocomplete_resource(formula_autocomplete_store),
-            materials_resource(materials_store),
-        ]
-    }
-)
-
-# Bonds
-from emmet.api.routes.bonds.resources import bonds_resource
-
-resources.update({"bonds": [bonds_resource(bonds_store)]})
-
-# Tasks
 from emmet.api.routes.tasks.resources import (
     task_resource,
     trajectory_resource,
@@ -306,156 +189,146 @@ resources.update(
     }
 )
 
-# Thermo
-from emmet.api.routes.thermo.resources import phase_diagram_resource, thermo_resource
+# -- Materials -- #
 
-resources.update(
-    {
-        "thermo": [
-            phase_diagram_resource(phase_diagram_store),
-            thermo_resource(thermo_store),
-        ]
-    }
+material_resources = []
+
+from emmet.api.routes.materials.resources import (
+    materials_resource,
+    find_structure_resource,
+    formula_autocomplete_resource,
 )
 
-# Dielectric
-from emmet.api.routes.dielectric.resources import dielectric_resource
+material_resources.extend(
+    [
+        find_structure_resource(materials_store),
+        formula_autocomplete_resource(formula_autocomplete_store),
+        materials_resource(materials_store),
+    ]
+)
 
-resources.update({"dielectric": [dielectric_resource(dielectric_store)]})
+
+# Bonds
+from emmet.api.routes.materials.bonds.resources import bonds_resource
+
+material_resources.extend([bonds_resource(bonds_store)])
+
+
+# Thermo
+from emmet.api.routes.materials.thermo.resources import phase_diagram_resource, thermo_resource
+
+material_resources.extend([phase_diagram_resource(phase_diagram_store), thermo_resource(thermo_store)])
+
+# Dielectric
+from emmet.api.routes.materials.dielectric.resources import dielectric_resource
+
+material_resources.extend([dielectric_resource(dielectric_store)])
 
 # Piezoelectric
-from emmet.api.routes.piezo.resources import piezo_resource
+from emmet.api.routes.materials.piezo.resources import piezo_resource
 
-resources.update({"piezoelectric": [piezo_resource(piezoelectric_store)]})
+material_resources.extend([piezo_resource(piezoelectric_store)])
 
 # Magnetism
-from emmet.api.routes.magnetism.resources import magnetism_resource
+from emmet.api.routes.materials.magnetism.resources import magnetism_resource
 
-resources.update({"magnetism": [magnetism_resource(magnetism_store)]})
+material_resources.extend([magnetism_resource(magnetism_store)])
 
 # Phonon
-from emmet.api.routes.phonon.resources import phonon_bsdos_resource
+from emmet.api.routes.materials.phonon.resources import phonon_bsdos_resource
 
-resources.update({"phonon": [phonon_bsdos_resource(phonon_bs_store)]})
+material_resources.extend([phonon_bsdos_resource(phonon_bs_store)])
 
 # EOS
-from emmet.api.routes.eos.resources import eos_resource
+from emmet.api.routes.materials.eos.resources import eos_resource
 
-resources.update({"eos": [eos_resource(eos_store)]})
+material_resources.extend([eos_resource(eos_store)])
 
 # Similarity
-from emmet.api.routes.similarity.resources import similarity_resource
+from emmet.api.routes.materials.similarity.resources import similarity_resource
 
-resources.update({"similarity": [similarity_resource(similarity_store)]})
+material_resources.extend([similarity_resource(similarity_store)])
 
 # XAS
-from emmet.api.routes.xas.resources import xas_resource
+from emmet.api.routes.materials.xas.resources import xas_resource
 
-resources.update({"xas": [xas_resource(xas_store)]})
+material_resources.extend([xas_resource(xas_store)])
 
 # Grain Boundaries
-from emmet.api.routes.grain_boundary.resources import gb_resource
+from emmet.api.routes.materials.grain_boundary.resources import gb_resource
 
-resources.update({"grain_boundary": [gb_resource(gb_store)]})
+material_resources.extend([gb_resource(gb_store)])
 
 # Fermi Surface
-from emmet.api.routes.fermi.resources import fermi_resource
+from emmet.api.routes.materials.fermi.resources import fermi_resource
 
-resources.update({"fermi": [fermi_resource(fermi_store)]})
+material_resources.extend([fermi_resource(fermi_store)])
 
 # Elasticity
-from emmet.api.routes.elasticity.resources import elasticity_resource
+from emmet.api.routes.materials.elasticity.resources import elasticity_resource
 
-resources.update({"elasticity": [elasticity_resource(elasticity_store)]})
+material_resources.extend([elasticity_resource(elasticity_store)])
 
 # DOIs
 from emmet.api.routes.dois.resources import dois_resource
 
-resources.update({"doi": [dois_resource(doi_store)]})
+material_resources.extend([dois_resource(doi_store)])
 
 # Substrates
-from emmet.api.routes.substrates.resources import substrates_resource
+from emmet.api.routes.materials.substrates.resources import substrates_resource
 
-resources.update({"substrates": [substrates_resource(substrates_store)]})
+material_resources.extend([substrates_resource(substrates_store)])
 
 # Surface Properties
-from emmet.api.routes.surface_properties.resources import surface_props_resource
+from emmet.api.routes.materials.surface_properties.resources import surface_props_resource
 
-resources.update({"surface_properties": [surface_props_resource(surface_props_store)]})
-
+material_resources.extend([surface_props_resource(surface_props_store)])
 
 # Robocrystallographer
-from emmet.api.routes.robocrys.resources import robo_resource, robo_search_resource
+from emmet.api.routes.materials.robocrys.resources import robo_resource, robo_search_resource
 
-resources.update(
-    {"robocrys": [robo_search_resource(robo_store), robo_resource(robo_store)]}
-)
+material_resources.extend([robo_search_resource(robo_store), robo_resource(robo_store)])
 
 # Synthesis
 from emmet.api.routes.synthesis.resources import synth_resource
 
-resources.update({"synthesis": [synth_resource(synth_store)]})
+material_resources.extend([synth_resource(synth_store)])
 
 # Electrodes
-from emmet.api.routes.electrodes.resources import insertion_electrodes_resource
+from emmet.api.routes.materials.electrodes.resources import insertion_electrodes_resource
 
-resources.update(
-    {
-        "insertion_electrodes": [
-            insertion_electrodes_resource(insertion_electrodes_store)
-        ]
-    }
-)
-
-# Molecules
-from emmet.api.routes.molecules.resources import molecules_resource
-
-resources.update({"molecules": [molecules_resource(molecules_store)]})
+material_resources.extend([insertion_electrodes_resource(insertion_electrodes_store)])
 
 # Oxidation States
-from emmet.api.routes.oxidation_states.resources import oxi_states_resource
+from emmet.api.routes.materials.oxidation_states.resources import oxi_states_resource
 
-resources.update({"oxidation_states": [oxi_states_resource(oxi_states_store)]})
+material_resources.extend([oxi_states_resource(oxi_states_store)])
 
 # Alloys
-from emmet.api.routes.alloys.resources import alloy_pairs_resource
+from emmet.api.routes.materials.alloys.resources import alloy_pairs_resource
 
-resources.update({"alloys": [alloy_pairs_resource(alloy_pairs_store)]})
+material_resources.extend([alloy_pairs_resource(alloy_pairs_store)])
 
 # Provenance
-from emmet.api.routes.provenance.resources import provenance_resource
+from emmet.api.routes.materials.provenance.resources import provenance_resource
 
-resources.update({"provenance": [provenance_resource(provenance_store)]})
+material_resources.extend([provenance_resource(provenance_store)])
 
 # Charge Density
-from emmet.api.routes.charge_density.resources import (
+from emmet.api.routes.materials.charge_density.resources import (
     charge_density_resource,
     charge_density_url_resource,
 )
 
-resources.update(
-    {
-        "charge_density": [
-            charge_density_resource(s3_chgcar),
-            charge_density_url_resource(chgcar_url),
-        ]
-    }
-)
+material_resources.extend([charge_density_resource(s3_chgcar), charge_density_url_resource(chgcar_url)])
 
 # Summary
-from emmet.api.routes.summary.resources import summary_resource, summary_stats_resource
+from emmet.api.routes.materials.summary.resources import summary_resource, summary_stats_resource
 
-resources.update(
-    {
-        "summary": [
-            summary_stats_resource(summary_store),
-            summary_resource(summary_store),
-        ]
-    }
-)
+material_resources.extend([summary_stats_resource(summary_store), summary_resource(summary_store)])
 
 # Electronic Structure
-from emmet.api.routes.electronic_structure.resources import (
+from emmet.api.routes.materials.electronic_structure.resources import (
     es_resource,
     bs_resource,
     bs_obj_resource,
@@ -463,28 +336,34 @@ from emmet.api.routes.electronic_structure.resources import (
     dos_obj_resource,
 )
 
-resources.update(
-    {
-        "electronic_structure": [
-            bs_resource(es_store),
-            dos_resource(es_store),
-            es_resource(es_store),
-            bs_obj_resource(s3_bs),
-            dos_obj_resource(s3_dos),
-        ]
-    }
+material_resources.extend(
+    [
+        bs_resource(es_store),
+        dos_resource(es_store),
+        es_resource(es_store),
+        bs_obj_resource(s3_bs),
+        dos_obj_resource(s3_dos),
+    ]
 )
-# MPComplete
+
+resources.update({"materials": material_resources})
+
+# -- Molecules -- #
+from emmet.api.routes.molecules.resources import molecules_resource
+
+resources.update({"molecules": [molecules_resource(molecules_store)]})
+
+# -- MPComplete -- #
 from emmet.api.routes.mpcomplete.resources import mpcomplete_resource
 
 resources.update({"mpcomplete": [mpcomplete_resource(mpcomplete_store)]})
 
-# Consumers
+# -- Consumers -- #
 from emmet.api.routes._consumer.resources import settings_resource
 
 resources.update({"_user_settings": [settings_resource(consumer_settings_store)]})
 
-# General Store
+# -- General Store -- #
 from emmet.api.routes._general_store.resources import general_store_resource
 
 resources.update({"_general_store": [general_store_resource(general_store)]})
@@ -492,7 +371,5 @@ resources.update({"_general_store": [general_store_resource(general_store)]})
 # === MAPI setup
 from emmet.api.core.documentation import description, tags_meta
 
-api = MAPI(
-    resources=resources, debug=debug, description=description, tags_meta=tags_meta
-)
+api = MAPI(resources=resources, debug=debug, description=description, tags_meta=tags_meta)
 app = api.app
