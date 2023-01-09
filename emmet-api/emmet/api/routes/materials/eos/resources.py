@@ -20,7 +20,7 @@ def eos_resource(eos_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["EOS"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/eos/",
     )
 

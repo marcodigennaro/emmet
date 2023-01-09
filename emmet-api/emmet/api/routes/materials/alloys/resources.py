@@ -22,7 +22,7 @@ def alloy_pairs_resource(alloy_pairs_store):
         ],
         tags=["Alloys"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/alloys/",
     )
 

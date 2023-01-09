@@ -20,7 +20,7 @@ def chemenv_resource(chemenv_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["Chemical Environment"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/chemenv/",
     )
 

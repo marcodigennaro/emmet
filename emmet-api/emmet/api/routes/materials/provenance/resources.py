@@ -23,7 +23,7 @@ def provenance_resource(provenance_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["Provenance"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/provenance/",
     )
 

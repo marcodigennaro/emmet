@@ -28,7 +28,7 @@ def elasticity_resource(elasticity_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["Elasticity"],
         disable_validation=False,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/elasticity/",
     )
 

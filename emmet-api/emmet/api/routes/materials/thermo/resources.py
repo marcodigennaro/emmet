@@ -51,7 +51,7 @@ def thermo_resource(thermo_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["Thermo"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/thermo/",
     )
 

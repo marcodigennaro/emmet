@@ -29,7 +29,7 @@ from emmet.api.routes.materials.summary.query_operators import (
 )
 from emmet.core.summary import SummaryDoc, SummaryStats
 
-timeout = MAPISettings().TIMEOUT
+timeout = MAPISettings(DB_VERSION="").TIMEOUT
 
 
 def summary_resource(summary_store):

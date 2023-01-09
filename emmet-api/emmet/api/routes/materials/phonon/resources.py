@@ -18,7 +18,7 @@ def phonon_bsdos_resource(phonon_bs_store):
         tags=["Phonon"],
         enable_default_search=False,
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/phonon/",
     )
 

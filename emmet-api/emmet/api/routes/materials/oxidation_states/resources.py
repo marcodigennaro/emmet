@@ -28,7 +28,7 @@ def oxi_states_resource(oxi_states_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["Oxidation States"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/oxidation_states/",
     )
 

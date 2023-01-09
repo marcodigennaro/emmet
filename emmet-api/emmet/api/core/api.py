@@ -20,8 +20,8 @@ class MAPI(API):
         debug=False,
         heartbeat_meta={
             "pymatgen": pmg_version,
-            "db_version": MAPISettings().DB_VERSION,
-            "suffix": MAPISettings().DB_NAME_SUFFIX,
+            "db_version": None,
+            "suffix": None,
         },
         description=None,
         tags_meta=None,

@@ -26,7 +26,7 @@ def bonds_resource(bonds_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["Bonds"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/bonds/",
     )
 

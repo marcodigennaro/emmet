@@ -17,7 +17,7 @@ from emmet.api.core.global_header import GlobalHeaderProcessor
 from emmet.api.core.settings import MAPISettings
 from emmet.core.tasks import DeprecationDoc, TaskDoc, TrajectoryDoc, EntryDoc
 
-timeout = MAPISettings().TIMEOUT
+timeout = MAPISettings(DB_VERSION="").TIMEOUT
 
 
 def task_resource(task_store):
@@ -31,10 +31,7 @@ def task_resource(task_store):
             MultipleTaskIDsQuery(),
             SortQuery(),
             PaginationQuery(),
-            SparseFieldsQuery(
-                TaskDoc,
-                default_fields=["task_id", "formula_pretty", "last_updated"],
-            ),
+            SparseFieldsQuery(TaskDoc, default_fields=["task_id", "formula_pretty", "last_updated"],),
         ],
         header_processor=GlobalHeaderProcessor(),
         hint_scheme=TasksHintScheme(),
@@ -83,15 +80,7 @@ def entries_resource(task_store):
         task_store,
         EntryDoc,
         query_operators=[EntryQuery(), PaginationQuery()],
-        key_fields=[
-            "task_id",
-            "input",
-            "output",
-            "run_type",
-            "task_type",
-            "completed_at",
-            "last_updated",
-        ],
+        key_fields=["task_id", "input", "output", "run_type", "task_type", "completed_at", "last_updated",],
         tags=["Tasks"],
         sub_path="/entries/",
         header_processor=GlobalHeaderProcessor(),

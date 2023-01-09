@@ -22,7 +22,7 @@ def surface_props_resource(surface_prop_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["Surface Properties"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/surface_properties/",
     )
 

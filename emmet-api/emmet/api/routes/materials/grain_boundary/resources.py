@@ -31,7 +31,7 @@ def gb_resource(gb_store):
         tags=["Grain Boundaries"],
         enable_get_by_key=False,
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/grain_boundary/",
     )
 

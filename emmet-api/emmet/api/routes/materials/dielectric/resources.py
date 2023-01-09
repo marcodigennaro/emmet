@@ -22,7 +22,7 @@ def dielectric_resource(dielectric_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["Dielectric"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/dielectric/",
     )
 

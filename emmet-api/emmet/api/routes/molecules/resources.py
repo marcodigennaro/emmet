@@ -28,7 +28,7 @@ def molecules_resource(molecules_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["Molecules"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
     )
 
     return resource

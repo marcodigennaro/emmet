@@ -29,7 +29,7 @@ from emmet.api.routes.materials.query_operators import (
 from emmet.api.core.global_header import GlobalHeaderProcessor
 from emmet.api.core.settings import MAPISettings
 
-timeout = MAPISettings().TIMEOUT
+timeout = MAPISettings(DB_VERSION="").TIMEOUT
 
 
 def find_structure_resource(materials_store):
@@ -82,7 +82,7 @@ def materials_resource(materials_store):
         hint_scheme=MaterialsHintScheme(),
         tags=["Materials"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
     )
 
     return resource

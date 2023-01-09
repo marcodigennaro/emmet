@@ -23,7 +23,7 @@ from emmet.core.electronic_structure import (
     ElectronicStructureDoc,
 )
 
-timeout = MAPISettings().TIMEOUT
+timeout = MAPISettings(DB_VERSION="").TIMEOUT
 
 
 def es_resource(es_store):

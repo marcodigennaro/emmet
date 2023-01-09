@@ -8,7 +8,7 @@ from emmet.api.routes.materials.query_operators import MultiMaterialIDQuery
 from emmet.api.routes.materials.robocrys.query_operators import RoboTextSearchQuery
 from emmet.core.robocrys import RobocrystallogapherDoc
 
-timeout = MAPISettings().TIMEOUT
+timeout = MAPISettings(DB_VERSION="").TIMEOUT
 
 
 def robo_resource(robo_store):

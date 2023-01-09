@@ -29,7 +29,7 @@ def substrates_resource(substrates_store):
         tags=["Substrates"],
         enable_get_by_key=False,
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/substrates/",
     )
 

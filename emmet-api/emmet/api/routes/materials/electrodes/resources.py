@@ -34,7 +34,7 @@ def insertion_electrodes_resource(insertion_electrodes_store):
         header_processor=GlobalHeaderProcessor(),
         tags=["Electrodes"],
         disable_validation=True,
-        timeout=MAPISettings().TIMEOUT,
+        timeout=MAPISettings(DB_VERSION="").TIMEOUT,
         sub_path="/insertion_electrodes/",
     )
 
