@@ -27,6 +27,13 @@ if db_uri:
         collection_name="materials",
     )
 
+    absorption_store = MongoURIStore(
+        uri=db_uri,
+        database=f"mp_core_{db_suffix}",
+        key="material_id",
+        collection_name="absorption",
+    )
+
     bonds_store = MongoURIStore(
         uri=db_uri,
         database=f"mp_core_{db_suffix}",
@@ -281,6 +288,11 @@ resources.update(
         ]
     }
 )
+
+# Absorption
+from emmet.api.routes.absorption.resources import absorption_resource
+
+resources.update({"absorption": [absorption_resource(absorption_store)]})
 
 # Bonds
 from emmet.api.routes.bonds.resources import bonds_resource

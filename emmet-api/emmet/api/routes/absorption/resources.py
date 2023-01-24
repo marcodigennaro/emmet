@@ -13,9 +13,9 @@ from emmet.api.routes.materials.query_operators import (
 )
 
 
-def absorption_pairs_resource(absorption_pairs_store):
+def absorption_resource(absorption_store):
     resource = ReadOnlyResource(
-        absorption_pairs_store,
+        absorption_store,
         AbsorptionDoc,
         query_operators=[
             MultiMaterialIDQuery(),
