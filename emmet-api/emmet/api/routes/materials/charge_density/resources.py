@@ -36,6 +36,7 @@ def charge_density_url_resource(s3_store):
         enable_default_search=False,
         enable_get_by_key=True,
         disable_validation=True,
+        sub_path="/charge_density/",
     )
 
     return resource

@@ -1,18 +1,9 @@
 from maggma.api.query_operator import PaginationQuery, SortQuery, SparseFieldsQuery
 from maggma.api.resource import ReadOnlyResource
 
-from emmet.api.routes.materials.query_operators import (
-    ChemsysQuery,
-    ElementsQuery,
-    FormulaQuery,
-)
+from emmet.api.routes.materials.query_operators import ChemsysQuery, ElementsQuery, FormulaQuery
 from emmet.api.routes.tasks.hint_scheme import TasksHintScheme
-from emmet.api.routes.tasks.query_operators import (
-    DeprecationQuery,
-    MultipleTaskIDsQuery,
-    TrajectoryQuery,
-    EntryQuery,
-)
+from emmet.api.routes.tasks.query_operators import DeprecationQuery, MultipleTaskIDsQuery, TrajectoryQuery, EntryQuery
 from emmet.api.core.global_header import GlobalHeaderProcessor
 from emmet.api.core.settings import MAPISettings
 from emmet.core.tasks import DeprecationDoc, TaskDoc, TrajectoryDoc, EntryDoc
@@ -31,13 +22,14 @@ def task_resource(task_store):
             MultipleTaskIDsQuery(),
             SortQuery(),
             PaginationQuery(),
-            SparseFieldsQuery(TaskDoc, default_fields=["task_id", "formula_pretty", "last_updated"],),
+            SparseFieldsQuery(TaskDoc, default_fields=["task_id", "formula_pretty", "last_updated"]),
         ],
         header_processor=GlobalHeaderProcessor(),
         hint_scheme=TasksHintScheme(),
         tags=["Tasks"],
         timeout=timeout,
         disable_validation=True,
+        sub_path="/tasks/",
     )
 
     return resource
@@ -51,7 +43,7 @@ def task_deprecation_resource(materials_store):
         tags=["Tasks"],
         enable_get_by_key=False,
         enable_default_search=True,
-        sub_path="/deprecation/",
+        sub_path="/tasks/deprecation/",
         header_processor=GlobalHeaderProcessor(),
         timeout=timeout,
     )
@@ -66,7 +58,7 @@ def trajectory_resource(task_store):
         query_operators=[TrajectoryQuery(), PaginationQuery()],
         key_fields=["task_id", "calcs_reversed"],
         tags=["Tasks"],
-        sub_path="/trajectory/",
+        sub_path="/tasks/trajectory/",
         header_processor=GlobalHeaderProcessor(),
         timeout=timeout,
         disable_validation=True,
@@ -80,9 +72,9 @@ def entries_resource(task_store):
         task_store,
         EntryDoc,
         query_operators=[EntryQuery(), PaginationQuery()],
-        key_fields=["task_id", "input", "output", "run_type", "task_type", "completed_at", "last_updated",],
+        key_fields=["task_id", "input", "output", "run_type", "task_type", "completed_at", "last_updated"],
         tags=["Tasks"],
-        sub_path="/entries/",
+        sub_path="/tasks/entries/",
         header_processor=GlobalHeaderProcessor(),
         timeout=timeout,
         disable_validation=True,

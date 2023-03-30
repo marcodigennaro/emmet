@@ -26,6 +26,7 @@ def synth_resource(synth_store):
         pipeline_query_operator=SynthesisSearchQuery(),
         header_processor=GlobalHeaderProcessor(),
         timeout=MAPISettings(DB_VERSION="").TIMEOUT,
+        sub_path="/synthesis/",
     )
 
     return resource
